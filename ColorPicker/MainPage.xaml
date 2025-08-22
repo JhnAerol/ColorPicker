@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorPicker.MainPage">
+
+    <StackLayout x:Name="Container" BackgroundColor="Green" Padding="15,50,0,0" >
+        <!--Upper Border contains Labels, Sliders, Entry amd Button-->
+        <Border Margin="10,0,25,0" VerticalOptions="Center" BackgroundColor="Coral">
+            <StackLayout>
+                <HorizontalStackLayout>
+                    <Label
+                        Text="Input Hex: "
+                        Padding="15,20,0,30"
+                        TextColor="White"
+                        FontSize="15"/>
+                    <Entry
+                        x:Name="txtInput"
+                        BackgroundColor="White"
+                        Margin="10,10,0,10"
+                        HorizontalTextAlignment="Start"
+                        Placeholder="Enter hex here"
+                        PlaceholderColor="DimGray"
+                        WidthRequest="110"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Button
+                        Text="Enter"
+                        Clicked="btnEnterHex"
+                        BackgroundColor="DarkKhaki"
+                        Margin="15,10"/>
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label
+                        Text="Red"
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                    <Slider
+                        x:Name="sldRed"
+                        MinimumTrackColor="Black"
+                        MaximumTrackColor="Cyan"
+                        ThumbColor="Black"
+                        ValueChanged="sld_ValueChanged"/>
+                    <Label
+                        Text="Green"
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                    <Slider
+                        x:Name="sldGreen"
+                        MinimumTrackColor="Black"
+                        MaximumTrackColor="Cyan"
+                        ThumbColor="Black"
+                        ValueChanged="sld_ValueChanged"/>
+                    <Label
+                        Text="Blue"
+                        TextColor="White"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                    <Slider
+                        x:Name="sldBlue"
+                        MinimumTrackColor="Black"
+                        MaximumTrackColor="Cyan"
+                        ThumbColor="Black"
+                        ValueChanged="sld_ValueChanged"
+                        Margin="0,0,0,20"/>
+                </VerticalStackLayout>
+            </StackLayout>
+            
+        </Border>
+        
+        <!--Frame Contains Button for copy and Label for hex value-->
+        <Frame Margin="10,25,25,0" VerticalOptions="Center" BackgroundColor="Coral">
+            <HorizontalStackLayout>
+                <Label
+                    x:Name="lblHex"
+                    Text="Color"
+                    Margin="15,2,20,0"
+                    TextColor="White"
+                    FontSize="18"
+                    WidthRequest="85"
+                    VerticalOptions="Center"/>
+                
+                <Button
+                    Text="Copy Hex"
+                    Margin="50,15"
+                    BackgroundColor="DarkKhaki"/>
+            </HorizontalStackLayout>
+        </Frame>
+        
+        <!--Button to get a random color-->
+        <Button
+            x:Name="btnRandomizer"
+            Text="Random Color"
+            Clicked="Randomizer"
+            Margin="60,25"
+            BackgroundColor="DarkKhaki"
+            BorderColor="Black"
+            BorderWidth="2"
+            TextColor="Black">
+            <Button.Background>
+                <!-- Semi-transparent white (glass effect) -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#80FFFFFF" Offset="0.0" />
+                    <GradientStop Color="#40FFFFFF" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </StackLayout>
+
+</ContentPage>
