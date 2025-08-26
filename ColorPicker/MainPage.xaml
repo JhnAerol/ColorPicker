@@ -84,6 +84,7 @@
                 <Button
                     Text="Copy Hex"
                     Margin="50,15"
+                    Clicked="btnCopy"
                     BackgroundColor="DarkKhaki"/>
             </HorizontalStackLayout>
         </Frame>

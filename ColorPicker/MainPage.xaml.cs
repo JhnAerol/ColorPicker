@@ -1,6 +1,4 @@
-﻿
-
-namespace ColorPicker
+﻿namespace ColorPicker
 {
     public partial class MainPage : ContentPage
     {
@@ -32,7 +30,7 @@ namespace ColorPicker
             lblHex.Text = color.ToHex();
         }
 
-        public void Randomizer (object sender, EventArgs args)
+        public void Randomizer(object sender, EventArgs args)
         {
             //Generate a random number
             var rand = new Random();
@@ -61,6 +59,15 @@ namespace ColorPicker
             sldRed.Value = color.Red;
 
             SetColor(color);
+        }
+
+        private async void btnCopy(object sender, EventArgs args)
+        {
+            //If the label is not empty then copy it.
+            if(!string.IsNullOrEmpty(lblHex.Text))
+            {
+                await Clipboard.SetTextAsync(lblHex.Text);
+            }
         }
     }
 }
